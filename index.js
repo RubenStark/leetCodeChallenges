@@ -917,5 +917,31 @@ const maxProfit = function (arr) {
 // console.log(maxProfit([7,1,5,3,6,4])); // 5
 // console.log(maxProfit([7,6,4,3,1])); // 0
 
+var isPalindrome2 = function (s) {
+    // Remove non-alphanumeric characters
+    s = s.replace(/[^a-z0-9]/gi, "").toLowerCase();
 
+    console.log(s);
 
+    // Check if the string is a palindrome
+    return s === s.split("").reverse().join("");
+
+}
+
+// console.log(isPalindrome2("A man, a plan, a canal: Panama")); // true
+
+var numberOfPermutations = function (n, r) {
+    if (n < r) {
+        return 0;
+    }
+
+    let result = 1;
+
+    for (let i = 0; i < r; i++) {
+        result *= n - i;
+    }
+
+    return result;
+}
+
+console.log(numberOfPermutations(7, 2)); // 60
