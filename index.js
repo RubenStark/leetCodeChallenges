@@ -782,8 +782,8 @@ function minimumSwaps(brackets) {
 }
 
 // Example usage:
-console.log(minimumSwaps("())")); // -1
-console.log(minimumSwaps("())(")); // 1
+// console.log(minimumSwaps("())")); // -1
+// console.log(minimumSwaps("())(")); // 1
 
 /**
  * @param {number} numRows
@@ -885,3 +885,37 @@ var getRow = function (numRows) {
 };
 
 // console.log(getRow(3));
+
+// var maxProfit = function (prices) {
+//     let minPrice = Infinity;
+//     let maxProfit = 0;
+
+//     for (let price of prices) {
+//         if (price < minPrice) {
+//             minPrice = price;
+//         } else if (price - minPrice > maxProfit) {
+//             maxProfit = price - minPrice;
+//         }
+//     }
+
+//     return maxProfit;
+    
+// }
+
+const maxProfit = function (arr) {
+    let min = arr[0]; let result = 0;
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        } else {
+            result = Math.max(result, arr[i] - min);
+        }
+    }
+    return result
+};
+
+// console.log(maxProfit([7,1,5,3,6,4])); // 5
+// console.log(maxProfit([7,6,4,3,1])); // 0
+
+
+
